@@ -1,9 +1,14 @@
 ---
-import MainHeader from "./MainHeader.astro";
 type TProps = {
   title: string;
   description: string;
 };
+
+// Components
+import MainHeader from "./MainHeader.astro";
+
+// Styles
+import "../styles/global.css";
 
 const {
   title = "My Astro Blog",
