@@ -1,0 +1,19 @@
+---
+import MainHeader from "./MainHeader.astro";
+type TProps = {
+  title: string;
+  description: string;
+};
+
+const {
+  title = "My Astro Blog",
+  description = "My musings about the Astro framework",
+} = Astro.props as TProps;
+---
+
+<html lang="en">
+  <MainHeader title={title} description={description} />
+  <body>
+    <slot />
+  </body>
+</html>
