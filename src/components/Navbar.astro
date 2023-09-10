@@ -2,6 +2,9 @@
 // data
 import navData from "../data/navData";
 
+// Components
+import Link from "./Link.astro";
+
 // Miscellaneous
 import { Icon } from "astro-icon";
 ---
@@ -11,9 +14,22 @@ import { Icon } from "astro-icon";
     <a href="/" class="logomark" aria-label="Go home">
       <Icon name="logomark" width="60" />
     </a>
-
     <ul>
-      {navData.map((item) => <a href={item.path}>{item.name}</a>)}
+      {
+        navData.map((item) => (
+          <Link
+            text={item.name}
+            href={item.path}
+            style="primary"
+            isFilled={false}
+            data-Navlink
+          />
+        ))
+      }
     </ul>
   </div>
 </nav>
+
+<script>
+  import "../js/nav";
+</script>
